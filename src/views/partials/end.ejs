@@ -1,0 +1,161 @@
+	<% if (success) {%>
+		<%= success %>
+	<% } else if (error) { %>
+		<%= error %>
+	<% } %>
+
+	
+	<!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="/js/mdb.min.js"></script>
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOUSl60uXejRnDCeRpud7OKI2FT9abDXY&callback=myMap"></script>
+	
+	<script>
+		$(document).ready(function() {
+			// get current URL path and assign 'active' class
+			var pathname = window.location.pathname;
+			$('.navbar-nav > li > a[href="'+pathname+'"]').parent().addClass('active');
+		});
+		// geolocation
+		navigator.geolocation.getCurrentPosition((position) => {
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+			$('#latitude').attr('value',`${latitude}`);
+			$('#longitude').attr('value',`${longitude}`);
+		});
+	</script>
+	
+	<!-- Remove it, bih -->
+	<script type="text/javascript">
+	//pull options
+	var option='';
+	var i=2;
+	var addOption='<div class="col-xs-3 addOptionContainer"><button id="first" class="btn btn-default addOption"><span class=" glyphicon  glyphicon-plus"></span></button></div>'
+
+
+	$(".addOption").click(function(){
+
+		i++
+		option ='<div class="options"><div class="md-form"><input class="form-control" name="'+'option'+i+'" type="text" placeholder="'+'option '+i+'"></div></div>';
+			
+		$(".pullOptionAdding").append(option);
+		
+		//stop adding more option when i == 10
+		if (i==10){
+			$(".addOptionContainer").remove();
+		}	
+		
+	});
+	</script>	
+	<br><br><br>
+	<footer class="page-footer font-small stylish-color-dark">
+		<div style="background-color: #6351ce;">
+			<div class="container">
+				<div class="row py-4 d-flex align-items-center">
+					<!--Grid column-->
+					<div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+						<h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
+					</div>
+					<div class="col-md-6 col-lg-7 text-center text-md-right">
+						<a>
+							<i class="fa fa-facebook white-text mr-lg-4"> </i>
+						</a>
+						<a>
+							<i class="fa fa-twitter white-text mr-lg-4"> </i>
+						</a>
+						<a>
+							<i class="fa fa-google-plus white-text mr-lg-4"> </i>
+						</a>
+						<a>
+							<i class="fa fa-linkedin white-text mr-lg-4"> </i>
+						</a>
+						<a>
+							<i class="fa fa-instagram white-text mr-lg-4"> </i>
+						</a>
+						<a href="/rss">
+							<i class="fa fa-rss white-text mr-lg-4"> </i>
+						</a>
+						<a href="/sitemap.xml">
+							<i class="fa fa-sitemap white-text mr-lg-4"> </i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="container text-center text-md-left">
+			<div class="row">
+				<div class="col-md-4">
+					<h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Footer Content</h5>
+					<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+					<p>Here you can use rows and columns here to organize your footer content.</p>
+				</div>
+				<div class="col-md-2">
+					<h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
+					<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+					<ul class="list-unstyled">
+						<li>
+							<a href="#!">Link 1 </a>
+						</li>
+						<li>
+							<a href="#!">Link 2 </a>
+						</li>
+						<li>
+							<a href="#!">Link 3 </a>
+						</li>
+						<li>
+							<a href="#!">Link 4 </a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-2">
+					<h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
+					<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+					<ul class="list-unstyled">
+						<li>
+							<a href="#!">Link 1 </a>
+						</li>
+						<li>
+							<a href="#!">Link 2 </a>
+						</li>
+						<li>
+							<a href="#!">Link 3 </a>
+						</li>
+						<li>
+							<a href="#!">Link 4 </a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Contact</h5>
+					<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+					<p>
+						<i class="fa fa-home mr-3"></i> New York, NY 10012, US
+					</p>
+					<p>
+						<i class="fa fa-envelope mr-3"></i> info@example.com
+					</p>
+					<p>
+						<i class="fa fa-phone mr-3"></i> + 01 234 567 88
+					</p>
+					<p>
+						<i class="fa fa-print mr-3"></i> + 01 234 567 89
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright py-3 text-center">
+			© 2018 Copyright <a href="/">MySpace</a>
+		</div>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<%- include('./partials/head') -%>
+<%- include('./partials/nav') -%>
+<br><br><br><br>
+<div class="container">
+	<%- include('./partials/editor') %>
+	<br>
+	
+	<form class="form-inline" action="/" method="POST"> 
+		
+		<!-- 
+			should take care of the following
+			problem: duplicated IDs 
+		 -->
+		<!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+			<label class="btn btn-sm btn-secondary active">
+				<input type="radio" id="descending" autocomplete="off" checked value="descending"> Date
+			</label>
+			<label class="btn btn-sm btn-secondary">
+				<input type="radio" id="ascending" autocomplete="off" value="ascending"> Vote
+			</label>
+		</div> 
+		......
+		-->
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+			<label class="btn btn-sm btn-secondary active">
+				<input type="radio" name="sort" id="descending" autocomplete="off" checked value="descending"> Descending
+			</label>
+			<label class="btn btn-sm btn-secondary">
+				<input type="radio" name="sort" id="ascending" autocomplete="off" value="ascending"> Ascending
+			</label>
+		</div>
+		<button type="submit" class="btn btn-sm btn-primary">Sort</button>
+	</form>
+	
+	
+	<br>
+	<% posts.forEach((post) => { %>
+		<%- include('./partials/post', {post}) %>
+	<% }) %>
+</div>
+
+    
+<%- include('./partials/end') -%>

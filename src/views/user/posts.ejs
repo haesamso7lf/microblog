@@ -1,0 +1,17 @@
+<%- include('./../partials/head') -%>
+<%- include('./../partials/nav') -%>
+<br><br>
+<div class="container">
+	<%- include('./../partials/categoryContainer') -%>
+	
+	<br>
+	<%- include('./../partials/editor', {categories}) -%>
+	<br>
+	<% posts.forEach((post) => { %>
+		<%- include('./../partials/post', {post})%>
+	<% }); %>
+
+
+</div>
+
+<%- include('./../partials/end') -%>

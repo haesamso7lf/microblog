@@ -1,0 +1,380 @@
+<form action="/posts" method="POST" enctype="multipart/form-data">
+   <div class="card">
+	  <div class="card-body text-center">
+		 <div class="d-inline-block nav nav-tabs" data-toggle="tab" data-target="#postOptionNavCollapse">
+			<!-- Start Editor Btns -->	
+			<div class="btn btn-outline-primary" data-toggle="tab" data-target="#postCtrl">
+			   <span class="text-muted fa fa-tumblr"></span>
+			</div>
+			<div class="btn btn-outline-primary" data-toggle="tab" data-target="#questionCtrl">
+			   <span class="text-success fa fa-question-circle"></span>
+			</div>
+			<div class="btn btn-outline-primary" data-toggle="tab" data-target="#linkCtrl">
+			   <span class="text-primary fa fa-link"></span>
+			</div>
+			<div class="btn btn-outline-primary" data-toggle="tab" data-target="#mediaCtrl">
+			   <span class="text-warning fa fa-flash "></span>
+			</div>
+			<div class="btn btn-outline-primary" data-toggle="tab" data-target="#pullCtrl">
+			   <span class="text-info fa fa-signal"></span>
+			</div>
+			<div class="btn btn-outline-primary" data-toggle="tab" data-target="#eventCtrl">
+			   <span class="text-danger fa fa-calendar-o"></span>
+			</div>
+			<div class="btn btn-outline-primary" data-toggle="tab" data-target="#chatCtrl">
+			   <span class="text-info fa fa-wechat"></span>
+			</div>
+			<!-- End Editor Btns -->
+		 </div>
+		 <!-- Start Editor Tabs -->
+		 <div class="tab-content">
+			<div id="postCtrl" class="tab-pane">
+			   <!--Start postCtrl-->
+			   <div class="d-inline-block text-center nav nav-tabs">
+				  <!--Start postCtrl Btns-->
+				  <div class="btn btn-outline-primary" data-toggle="tab" data-target="#textCtrl">
+					 <span class="text-success fa fa-file-text"></span>
+				  </div>
+				  <div class="btn btn-outline-primary" data-toggle="tab" data-target="#quoteCtrl">
+					 <span class="text-warning fa fa-quote-right"></span>
+				  </div>
+				  <!--End postCtrl Btns-->
+			   </div>
+			   <!--Start postCtrl tabs-->
+			   <div class="tab-content">
+				  <!--Start textCtrl-->
+				  <div id="textCtrl" class="tab-pane">
+					 <div class="md-form">
+						<input type="text" name="title" id="title" class="form-control">
+						<label for="title" class="font-weight-light">Title</label>
+					 </div>
+					 <div class="md-form">
+						<textarea type="text" name="content" id="content" class="form-control md-textarea"></textarea>
+						<label for="content">Content</label>
+					 </div>
+					 <div class="input-group mb-3">
+						<div class="input-group-prepend">
+						   <span class="input-group-text">Upload</span>
+						</div>
+						<div class="custom-file">
+						   <input type="file" name="image" class="custom-file-input" id="image">
+						   <label class="custom-file-label" for="image">Choose file</label>
+						</div>
+					 </div>
+				  </div>
+				  <!--End textCtrl-->
+				  <!--Start quoteCtrl-->
+				  <div id="quoteCtrl" class="tab-pane">
+					 <div class="form-group">
+						<textarea class="form-control" placeholder="quote"></textarea>
+					 </div>
+					 <div class="form-group">
+						<input class="form-control" placeholder="source">
+					 </div>
+				  </div>
+				  <!--End quoteCtrl-->
+			   </div>
+			   <!--End postCtrl tabs-->
+			   <!--End postCtrl-->
+			</div>
+			<div id="questionCtrl" class="tab-pane">
+			   <!--Start questionCtrl-->
+			   <div class="form-group">
+				  <input class="form-control" placeholder="about">
+			   </div>
+			   <div class="form-group">
+				  <textarea class="form-control" placeholder="details"></textarea>
+			   </div>
+			   <!--End questionCtrl-->
+			</div>
+			<div id="linkCtrl" class="tab-pane">
+			   <!--Start linkCtrl-->
+			   <div class="form-group">
+				  <input class="form-control" placeholder="link">
+			   </div>
+			   <div class="form-group">
+				  <textarea class="form-control" placeholder="description"></textarea>
+			   </div>
+			   <!--End linkCtrl-->
+			</div>
+			<div id="mediaCtrl" class="tab-pane">
+			   <!--Start mediaCtrl-->
+			   <div class="d-inline-block text-center nav nav-tabs">
+				  <!--Start mediaCtrl Btns-->
+				  <div class="btn btn-outline-primary" data-toggle="tab" data-target="#imageCtrl">
+					 <span class="text-success fa fa-camera"></span>
+				  </div>
+				  <div class="btn btn-outline-primary" data-toggle="tab" data-target="#soundCtrl">
+					 <span class="text-warning fa fa-music"></span>
+				  </div>
+				  <div class="btn btn-outline-primary" data-toggle="tab" data-target="#videoCtrl">
+					 <span class="text-primary fa fa-vimeo"></span>
+				  </div>
+				  <div class="btn btn-outline-primary" data-toggle="tab" data-target="#fileCtrl">
+					 <span class="text-danger fa fa-file"></span>
+				  </div>
+				  <!--End mediaCtrl Btns-->
+			   </div>
+			   <!--Start mediaCtrl Tabs-->
+			   <div class="tab-content">
+				  <!--Start Ctrl-->
+				  <div id="imageCtrl" class="tab-pane">
+					 <div class="row">
+						<div class="col-md-6">
+						   <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+								 <span class="input-group-text">Upload</span>
+							  </div>
+							  <div class="custom-file">
+								 <input name="file" type="file" class="custom-file-input" id="imageF">
+								 <label class="custom-file-label" for="imageF">Choose file (image)</label>
+							  </div>
+						   </div>
+						</div>
+						<div class="col-md-6">
+						   <input type="text" class="form-control" placeholder="URL">
+						</div>
+					 </div>
+				  </div>
+				  <!--End Ctrl-->
+				  <!--Start Ctrl-->
+				  <div id="soundCtrl" class="tab-pane">
+					 <div class="row">
+						<div class="col-md-6">
+						   <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+								 <span class="input-group-text">Upload</span>
+							  </div>
+							  <div class="custom-file">
+								 <input name="file" type="file" class="custom-file-input" id="sound">
+								 <label class="custom-file-label" for="sound">Choose file (sound)</label>
+							  </div>
+						   </div>
+						</div>
+						<div class="col-md-6">
+						   <input type="text" class="form-control" placeholder="URL">
+						</div>
+					 </div>
+				  </div>
+				  <!--End Ctrl-->
+				  <!--Start Ctrl-->
+				  <div id="videoCtrl" class="tab-pane">
+					 <div class="row">
+						<div class="col-md-6">
+						   <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+								 <span class="input-group-text">Upload</span>
+							  </div>
+							  <div class="custom-file">
+								 <input name="file" type="file" class="custom-file-input" id="video">
+								 <label class="custom-file-label" for="video">Choose file (video)</label>
+							  </div>
+						   </div>
+						</div>
+						<div class="col-md-6">
+						   <input type="text" class="form-control" placeholder="URL">
+						</div>
+					 </div>
+				  </div>
+				  <!--End Ctrl-->
+				  <!--Start Ctrl-->
+				  <div id="fileCtrl" class="tab-pane">
+					 <div class="row">
+						<div class="col-md-6">
+						   <div class="input-group mb-3">
+							  <div class="input-group-prepend">
+								 <span class="input-group-text">Upload</span>
+							  </div>
+							  <div class="custom-file">
+								 <input name="file" type="file" class="custom-file-input" id="file">
+								 <label class="custom-file-label" for="file">Choose file (file)</label>
+							  </div>
+						   </div>
+						</div>
+						<div class="col-md-6">
+						   <input type="text" class="form-control" placeholder="URL">
+						</div>
+					 </div>
+				  </div>
+				  <!--End Ctrl-->
+			   </div>
+			   <!--End mediaCtrl Tabs-->
+			   <!--End mediaCtrl-->
+			</div>
+			<div id="pullCtrl" class="tab-pane">
+			   <!--Start pullCtrl-->
+			   <div class="col-md-12">
+				  <div class="pullOption">
+					<div class="md-form">
+						<input type="text" id="about" class="form-control">
+						<label for="about">About</label>
+					</div>
+					 <div class="pullOptionAdding">
+						<div class="options">
+						   <div class="md-form"> 
+							  <input class="form-control" name="option1" type="text" placeholder="option 1">
+						   </div>
+						</div>
+						<div class="options">
+						   <div class="md-form">
+							  <input class="form-control" name="option2" type="text" placeholder="option 2">
+						   </div>
+						</div>
+					 </div>
+					 <div class="col-xs-3 addOptionContainer">
+						<div id="first" class="btn btn-primary btn-sm addOption">
+							<span class=" fa  fa-plus"></span>
+						</div>
+					 </div>
+				  </div>
+			   </div>
+			   <!--End pullCtrl-->
+			</div>
+			<div id="eventCtrl" class="tab-pane">
+			   <!--Start eventCtrl-->
+			   <div class="form-group">
+				  <select class="form-control">
+					 <optgroup label="life events">
+					 </optgroup>
+					 <optgroup label="Work & Education">
+						<option>	New Job...</option>
+						<option>	Published Book or Paper...</option>
+						<option>	Retirement...</option>
+						<option>	New School...</option>
+						<option>	Study Abroad...</option>
+						<option>	Volunteer Work...</option>
+						<option>	Military Service...</option>
+						<option>	Create Your Own...</option>
+					 </optgroup>
+					 <optgroup label="Family & Relationships">
+						<option>	First Met...</option>
+						<option>	New Relationship...</option>
+						<option>	Engagement...</option>
+						<option>	Marriage...</option>
+						<option>	Anniversary...</option>
+						<option>	Expecting a Baby...</option>
+						<option>	New Child...</option>
+						<option>	New Family Member...</option>
+						<option>	New Pet...</option>
+						<option>	End of Relationship...</option>
+						<option>	Loss of a Loved One...</option>
+						<option>	Create Your Own...</option>
+					 </optgroup>
+					 <optgroup label="Home & Living">
+						<option>	Moved...</option>
+						<option>	Bought a Home...</option>
+						<option>	Home Improvement...</option>
+						<option>	New Roommate...</option>
+						<option>	New Vehicle...</option>
+						<option>	Create Your Own...</option>
+					 </optgroup>
+					 <optgroup label="Health & Wellness">
+						<option>	Overcame an Illness...</option>
+						<option>	Quit a Habit...</option>
+						<option>	New Eating Habits...</option>
+						<option>	Weight Loss...</option>
+						<option>	Glasses, Contacts, Other...</option>
+						<option>	Broken Bone...</option>
+						<option>	Removed Braces...</option>
+						<option>	Create Your Own...</option>
+					 </optgroup>
+					 <optgroup label="Travel & Experiences">
+						<option>	New Hobby...</option>
+						<option>	New Instrument...</option>
+						<option>	New Language...</option>
+						<option>	Tattoo or Piercing...</option>
+						<option>	New License...</option>
+						<option>	Travel...</option>
+						<option>	Achievement or Award...</option>
+						<option>	Changed Beliefs...</option>
+						<option>	First Word, Kiss, Other...</option>
+						<option>	New Sport...</option>
+						<option>	Create Your Own...</option>
+					 </optgroup>
+				  </select>
+			   </div>
+			   <!--End eventCtrl-->
+			</div>
+			<div id="chatCtrl" class="tab-pane">
+			   <!--Start chatCtrl-->
+			   chat
+			   <!--End chatCtrl-->
+			</div>
+		 </div>
+		 <!-- End Editor Tabs -->
+		 <!-- Start Editor Post Options -->
+		 <div class="tab-content">
+			<!--Start Editor Post Options Tabs -->
+			<div id="tagCtrl" class="tab-pane">
+			   <div class="md-form">
+				  <input type="text" name="tag" id="tag" class="form-control">
+				  <label for="tag" class="font-weight-light">Tag</label>
+			   </div>
+			</div>
+			<div id="postInCtrl" class="tab-pane">
+			   <div class="input-group mb-3">
+				  <div class="input-group-prepend">
+					 <label class="input-group-text" for="cate">category</label>
+				  </div>
+				  <select name="category" class="custom-select" id="cate">
+					 <% categories.forEach((category) => { %>
+					 <option value="<%= category._id %>"><%= category.name %></option>
+					 <% }) %>
+				  </select>
+			   </div>
+			</div>
+			<div id="whoShouldSeeThisCtrl" class="tab-pane">
+			   whoShouldSeeThisCtrl
+			</div>
+			<div id="checkInCtrl" class="tab-pane">
+			   <input type="hidden" id="latitude" name="latitude" placeholder="latitude">
+			   <input type="hidden" id="longitude" name="longitude" placeholder="longitude">
+			</div>
+			<div id="feelingCtrl" class="tab-pane">
+			   feelingCtrl
+			</div>
+			<div id="timeCtrl" class="tab-pane">
+			   <div class="input-group mb-2 mr-sm-2">
+				  <div class="input-group-prepend">
+					 <div class="input-group-text">date</div>
+				  </div>
+				  <input class="form-control py-0" name="date" type="datetime-local">
+			   </div>
+			</div>
+		 </div>
+		 <!--End Editor Post Options Tabs-->
+		 <div class="tab-content">
+			<div id="postOptionNavCollapse" class="tab-pane">
+				<div class="d-inline-block">
+					<div class="btn-group nav nav-tabs">
+						<!--Start Editor Post Options Nav-->
+						<button class="btn btn-primary btn-sm" data-toggle="tab" data-target="#tagCtrl">
+							<span class="fa fa-user"></span>
+						</button>
+						<button class="btn btn-primary btn-sm" data-toggle="tab" data-target="#postInCtrl">
+							<span class="fa fa-plus"></span>
+						</button>
+						<button class="btn btn-primary btn-sm" data-toggle="tab" data-target="#whoShouldSeeThisCtrl">
+							<span class="fa fa-eye"></span>
+						</button>
+						<button class="btn btn-primary btn-sm" data-toggle="tab" data-target="#checkInCtrl">
+							<span class="fa fa-map-marker"></span>
+						</button>
+						<button class="btn btn-primary btn-sm" data-toggle="tab" data-target="#feelingCtrl">
+							<span class="fa fa-fire"></span>
+						</button>
+						<button class="btn btn-primary btn-sm" data-toggle="tab" data-target="#timeCtrl">
+							<span class="fa fa-calendar"></span>
+						</button>
+						<!--Start Editor Post Options Nav-->
+					</div>
+				</div>
+				<button type="submit" class="btn btn-outline-primary btn-sm">
+					Post
+				</button>
+			</div>
+		 </div>
+		 <!-- End Editor post Options -->		
+	  </div>
+   </div>
+</form>

@@ -1,0 +1,321 @@
+WEBVTT
+
+1
+00:00:00.610 --> 00:00:04.750
+One of the most important factors to keep
+in mind while creating a web page is,
+
+2
+00:00:04.750 --> 00:00:06.130
+file sizes.
+
+3
+00:00:06.130 --> 00:00:07.910
+The more data you have to load,
+
+4
+00:00:07.910 --> 00:00:11.300
+the more your site visitors will have to
+wait around.
+
+5
+00:00:11.300 --> 00:00:12.820
+This is always important, but
+
+6
+00:00:12.820 --> 00:00:16.390
+it's especially important with media, like
+audio and
+
+7
+00:00:16.390 --> 00:00:22.670
+video because, they typically have much
+larger file sizes than text and images.
+
+8
+00:00:22.670 --> 00:00:26.040
+It's not enough to just take a video clip
+from your camera or
+
+9
+00:00:26.040 --> 00:00:29.760
+your smart phone and just toss it onto a
+web page.
+
+10
+00:00:29.760 --> 00:00:34.730
+Rather you need to make sure that you've
+compressed the video and audio properly,
+
+11
+00:00:34.730 --> 00:00:40.790
+so that it has a small file size, but
+still looks and sounds good.
+
+12
+00:00:40.790 --> 00:00:45.190
+So, there's a couple of different programs
+that you could use to do this.
+
+13
+00:00:45.190 --> 00:00:50.580
+One is VLC, or VideoLAN and this is a
+media player,
+
+14
+00:00:50.580 --> 00:00:55.520
+but it does a whole bunch of stuff and one
+of them is convert video.
+
+15
+00:00:55.520 --> 00:01:00.210
+You could also use another program like
+Adobe media encoder or
+
+16
+00:01:00.210 --> 00:01:04.410
+maybe a non linear video editor of your
+choice.
+
+17
+00:01:04.410 --> 00:01:08.520
+Just about anything will be able to
+convert the video into at
+
+18
+00:01:08.520 --> 00:01:14.500
+least H.264 which is a format supported by
+Internet Explorer and Safari.
+
+19
+00:01:14.500 --> 00:01:19.930
+However to get the files into ogg theora,
+VLC should work just fine.
+
+20
+00:01:19.930 --> 00:01:22.520
+So let's switch over to VLC.
+
+21
+00:01:22.520 --> 00:01:26.040
+You can download it and when you install
+it on a Mac,
+
+22
+00:01:26.040 --> 00:01:28.740
+it will look something like this.
+
+23
+00:01:28.740 --> 00:01:36.530
+And I'll go up to file here, and I'll say
+convert slash stream and it will give me
+
+24
+00:01:36.530 --> 00:01:43.000
+a window here were I can open media and
+then I have a file here I want to convert.
+
+25
+00:01:43.000 --> 00:01:48.390
+So, I already have this video and this was
+shot on a pretty nice camera but
+
+26
+00:01:48.390 --> 00:01:53.790
+you can get this same kind of file format
+from an iPhone or,
+
+27
+00:01:53.790 --> 00:01:57.150
+maybe an android phone and convert it.
+
+28
+00:01:57.150 --> 00:02:02.290
+Pretty much any incoming video, you can
+convert into the format that you need.
+
+29
+00:02:02.290 --> 00:02:06.530
+Next, you'll need to choose a profile and
+there's two things going on here.
+
+30
+00:02:06.530 --> 00:02:12.160
+There is the encapsulation, and there's
+also the video o-deck.
+
+31
+00:02:12.160 --> 00:02:15.270
+So before we get into that, let's go back
+and take a look.
+
+32
+00:02:15.270 --> 00:02:18.250
+The encapsulation is basically the file
+format.
+
+33
+00:02:18.250 --> 00:02:23.940
+So, in this case we're gonna have an MP4
+but we could have something like WebM,
+
+34
+00:02:23.940 --> 00:02:27.610
+which is another web based video format.
+
+35
+00:02:27.610 --> 00:02:33.430
+And there's also Theora Vorbis or Ogg
+Theora, as it's sometimes called.
+
+36
+00:02:33.430 --> 00:02:36.550
+And this is going to be an Ogg file
+format.
+
+37
+00:02:36.550 --> 00:02:38.600
+So that's the encapsulation.
+
+38
+00:02:38.600 --> 00:02:43.320
+Then the Kodak is how the video and the
+audio, is actually compressed.
+
+39
+00:02:43.320 --> 00:02:47.208
+That's why there's two things listed on
+each one of this with a plus.
+
+40
+00:02:47.208 --> 00:02:52.640
+So, each .264 in this case is the video
+compression, and
+
+41
+00:02:52.640 --> 00:02:56.950
+then mp3 is the audio compression.
+
+42
+00:02:56.950 --> 00:03:03.140
+There's also theora vorbis, which is a
+video and audio combination.
+
+43
+00:03:03.140 --> 00:03:08.290
+So, again, for Internet Explorer and
+Safari, this first one will work and
+
+44
+00:03:08.290 --> 00:03:12.260
+then you can click save as file, and
+
+45
+00:03:12.260 --> 00:03:17.320
+then you can choose an output location, so
+maybe you can save it in the same spot and
+
+46
+00:03:17.320 --> 00:03:21.300
+just call it my video, or whatever you
+want to call it.
+
+47
+00:03:21.300 --> 00:03:24.830
+In this case, we called it Bridge.mp4, and
+
+48
+00:03:24.830 --> 00:03:30.550
+you would click save and it would start to
+convert for you.
+
+49
+00:03:30.550 --> 00:03:36.140
+And then you would want to do the same
+thing for Theora Vorbis, and
+
+50
+00:03:36.140 --> 00:03:42.060
+if you click browse, you could save it to
+a location, and it will save out.
+
+51
+00:03:42.060 --> 00:03:46.740
+Now, the thing to remember here is you
+want to keep the file size low so,
+
+52
+00:03:46.740 --> 00:03:52.720
+if you click that customize button, you
+can go to the video codec and
+
+53
+00:03:52.720 --> 00:03:57.680
+let's actually go back to h.264 plus mp3,
+and
+
+54
+00:03:57.680 --> 00:04:01.590
+under video codec here, you can adjust the
+bit rate so
+
+55
+00:04:01.590 --> 00:04:07.110
+you might want to put something on the
+order of 5000 or maybe 10,000.
+
+56
+00:04:07.110 --> 00:04:09.560
+And slowly work your way down.
+
+57
+00:04:09.560 --> 00:04:14.590
+And the frame rate for this particular
+video is 24 frames per second, but
+
+58
+00:04:14.590 --> 00:04:16.420
+you can adjust that if you'd like.
+
+59
+00:04:16.420 --> 00:04:18.500
+And then you'd want an output resolution.
+
+60
+00:04:18.500 --> 00:04:22.770
+This is another place that you can play,
+with the file size.
+
+61
+00:04:22.770 --> 00:04:25.220
+So, you might say 1280 by 720.
+
+62
+00:04:25.220 --> 00:04:30.080
+And the source for this particular video's
+1920 1080, so we'd actually be scaling
+
+63
+00:04:30.080 --> 00:04:36.500
+this down in resolution a little bit, but
+that will produce a smaller file size.
+
+64
+00:04:36.500 --> 00:04:39.800
+So the bit rate and the resolution under
+video.
+
+65
+00:04:39.800 --> 00:04:41.430
+Are two things to pay attention to.
+
+66
+00:04:42.710 --> 00:04:47.720
+So when you output video and audio, make
+sure to adjust your settings
+
+67
+00:04:47.720 --> 00:04:52.980
+appropriately, so that you get the optimal
+balance between file size and quality
+

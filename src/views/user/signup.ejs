@@ -1,0 +1,77 @@
+<%- include('./../partials/head') -%>
+<%- include('./../partials/nav') -%>
+<br><br><br>
+<div class="container">
+	<div class="card">
+	<div class="card-body">
+	<form action="/signup" method="POST" enctype="multipart/form-data">
+		<p class="h4 text-center mb-4">Sign up</p>
+
+		<div class="md-form">
+			<i class="fa fa-user prefix grey-text"></i>
+			<input type="text" id="username" name="username" class="form-control">
+			<label for="username">Your username</label>
+		</div>
+		
+		<div class="md-form">
+			<i class="fa fa-user prefix grey-text"></i>
+			<input type="text" id="name" name="name" class="form-control">
+			<label for="name">Your name</label>
+		</div>
+
+		<div class="md-form">
+			<i class="fa fa-envelope prefix grey-text"></i>
+			<input type="email" id="email" name="email" class="form-control">
+			<label for="email">Your email</label>
+		</div>
+
+		<div class="md-form">
+			<i class="fa fa-lock prefix grey-text"></i>
+			<input type="password" id="password" name="password" class="form-control">
+			<label for="password">Your password</label>
+		</div>
+		
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+			 <span class="input-group-text">Avatar</span>
+		  </div>
+		  <div class="custom-file">
+			 <input name="avatar" type="file" class="custom-file-input" id="avater">
+			 <label class="custom-file-label" for="avater">Choose file (image)</label>
+		  </div>
+	   </div>
+
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+			 <span class="input-group-text">Cover</span>
+		  </div>
+		  <div class="custom-file">
+			 <input name="cover" type="file" class="custom-file-input" id="cover">
+			 <label class="custom-file-label" for="cover">Choose file (Cover)</label>
+		  </div>
+	   </div>
+	   
+		<div class="input-group mb-2 mr-sm-2">
+			<div class="input-group-prepend">
+				<div class="input-group-text">Birthday</div>
+			</div>
+			<input class="form-control py-0" name="birthday" type="date">
+		</div>
+		
+		<div class="custom-control custom-radio custom-control-inline">
+			<input type="radio" id="male" name="sex" value="male" class="custom-control-input">
+			<label class="custom-control-label" for="male">Male</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+			<input type="radio" id="female" name="sex" value="female" class="custom-control-input">
+			<label class="custom-control-label" for="female">Female</label>
+		</div>
+		
+		<div class="text-center mt-4">
+			<button class="btn btn-outline-primary btn-sm" type="submit">Register</button>
+		</div>
+	</form>
+	</div>
+	</div>
+</div>
+<%- include('./../partials/end') -%>

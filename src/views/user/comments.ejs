@@ -1,0 +1,108 @@
+<%- include('./../partials/head') -%>
+<%- include('./../partials/nav') -%>
+<br><br>
+<div class="container">
+	<%- include('./../partials/categoryContainer') -%>
+
+	<% if (comments.length === 0) {%>
+		no hay commentarios 
+	<%}%>
+	<% comments.forEach((comment) => { %>
+	<div class="card m-2">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-sm-1">
+					<img src="/uploads/avatar/male.jpg" alt="avatar" class="rounded-circle" style="width:40px;height:40px;">
+				</div>
+				<div class="col-sm-10">
+					<div class="badge  badge-pill badge-primary">
+						<%= comment.content %>
+					</div><br>
+					<div class="btn-group">
+						<form action="/comment/<%= comment._id %>?_method=PUT" method="POST">
+							<input type="hidden" name="upvote" value="<%= comment.upvote + 1 %>">
+							<button type="submit" class="btn btn-link"><i class="fa fa-arrow-up"></i> (<%= comment.upvote %>) </button>
+						</form>
+						<form action="/comment/<%= comment._id %>?_method=PUT" method="POST">
+							<input type="hidden" name="downvote" value="<%= comment.downvote + 1 %>">
+							<button type="submit" class="btn btn-link"><i class="fa fa-arrow-down"></i> (<%= comment.downvote %>)</button>
+						</form>
+					</div>		
+					<%= comment.date %>	
+					<div class="row">
+						<div class="col-sm-1">
+							<img src="/uploads/avatar/male.jpg" alt="avatar" class="rounded-circle" style="width: 40px;height: 40px">
+						</div>
+						<div class="col-sm-11">
+							<form action="/comment" method="POST">
+									<input type="hidden" name="child" value="<%= comment._id %>">
+									<input type="hidden" name="post" value="<%= comment.post._id %>">
+									<input type="text" name="content" class="form-control" placeholder="Write a comment">
+							</form>
+						</div>
+					</div>
+					<% comment.child.forEach((child) => { %>
+						<%= child %>
+					<% }); %>
+				</div>
+				<div class="col-sm-1">
+					<div class="dropdown">
+					  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  </button>
+					  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+							<a data-toggle="modal" data-target="#edit-<%= comment._id %>" class="dropdown-item">Edit</a>
+							<form method="POST" action="/comment/<%= comment._id %>?_method=DELETE">
+								<button type="submit" class="dropdown-item">Delete</button>
+							</form>
+					  </div>
+					</div>			
+				</div>
+			</div>
+		
+			<!-- Edit Model -->
+			<form method="POST" action="/comment/<%= comment._id %>?_method=PUT">
+				<div class="modal fade" id="edit-<%= comment._id %>" tabindex="-1" role="dialog" aria-labelledby="editLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="editLabel">edit</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="md-form form-sm">
+									<textarea type="text" name="content" id="content-<%= comment._id %>" class="md-textarea form-control"><%= comment.content %></textarea>
+									<label for="content-<%= comment._id %>">Content</label>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-primary btn-sm" type="submit">Update</button>
+								<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>  
+
+
+			<div class="row">
+				<div class="col-sm-1">
+					<img src="/uploads/avatar/male.jpg" alt="avatar" class="rounded-circle" style="width: 40px;height: 40px;">
+				</div>
+				<div class="col-sm-11">
+					<form action="/comment" method="POST">
+							<input type="hidden" name="post" value="<%= comment.post._id %>">
+							<input type="text" name="content" class="form-control" placeholder="Write a comment">
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<% }) %>
+
+
+</div>
+
+<%- include('./../partials/end') -%>

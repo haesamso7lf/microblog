@@ -1,0 +1,130 @@
+<div class="card mb-4">
+	<div class="card-body">
+		<div class="row">
+			<div class="col-sm">
+				<img src="/uploads/avatar/<%= post.user.avatar %>" alt="avatar" class="rounded-circle" style="width: 50px;height: 50px;">
+			</div>
+			<div class="col-sm-10">
+				<a href="/profile/<%= post.user._id %>"><%= post.user.name %></a>
+				<a class="badge badge-primary" href="/categories/<%= post.category._id %>"><%= post.category.name %></a>
+				<br>
+				<a href="/posts/<%= post._id %>"><%= post.date %></a>
+				<!-- Button trigger modal -->
+				<a data-toggle="modal" data-target="#map-<%= post._id %>">
+					<%= post.latitude %> , <%= post.longitude%>
+				</a>			
+			</div>
+			<div class="col-sm-1">
+				<div class="dropdown">
+				  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  </button>
+				  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+						<a data-toggle="modal" data-target="#edit-<%= post._id %>" class="dropdown-item">Edit</a>
+						<form method="POST" action="/posts/<%= post._id %>?_method=DELETE">
+							<button type="submit" class="dropdown-item">Delete</button>
+						</form>
+				  </div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+		<!-- Map Modal -->
+		<div class="modal fade" id="map-<%= post._id %>" tabindex="-1" role="dialog" aria-labelledby="mapLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="mapLabel">Map</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div id="googleMap-<%= post._id %>" style="width:100%;height:400px;"></div>
+						<script>
+							function myMap() {
+								var mapProp= {
+									center:new google.maps.LatLng(<%= post.latitude %>, <%= post.longitude%>),
+									zoom:5
+								};
+								var map=new google.maps.Map(document.getElementById("googleMap-<%= post._id %>"),mapProp);
+							}
+						</script>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        <!-- Edit Model -->
+	<form method="POST" action="/posts/<%= post._id %>?_method=PUT">
+		<div class="modal fade" id="edit-<%= post._id %>" tabindex="-1" role="dialog" aria-labelledby="editLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="editLabel">edit</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+							<div class="md-form">
+								<input type="text" name="title" id="title-<%= post._id %>" value="<%= post.title %>" class="form-control">
+								<label for="title-<%= post._id %>" class="font-weight-light">Title</label>
+							</div>
+							<div class="md-form form-sm">
+								<textarea type="text" name="content" id="content-<%= post._id %>" class="md-textarea form-control"><%= post.content %></textarea>
+								<label for="content-<%= post._id %>">Content</label>
+							</div>
+							<div class="md-form">
+								<input type="text" name="tag" id="tag-<%= post._id %>" value="<%= post.tag %>" class="form-control">
+								<label for="tag-<%= post._id %>" class="font-weight-light">Tag</label>
+							</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary btn-sm" type="submit">Post</button>
+						<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+    </form>                        
+		
+		<h4 class="card-title"><%= post.title %></h4>
+		<p class="card-text">
+			<%- post.content %><br> 
+			<% post.tag.split(',').forEach( function (tag) { %> 
+				<u class="text-primary">#<%= tag %></u>
+			<% }) %>
+			<br>
+			<img class="img-fluid" src="/uploads/<%= post.image%>" alt="Card image cap">
+		</p>
+		
+		<div class="btn-group">
+			<form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+				<input type="hidden" name="upvote" value="<%= post.upvote + 1 %>">
+				<button type="submit" class="btn btn-link"><i class="fa fa-thumbs-up text-muted"></i> (<%= post.upvote %>) </button>
+			</form>
+			<form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+				<input type="hidden" name="downvote" value="<%= post.downvote + 1 %>">
+				<button type="submit" class="btn btn-link"><i class="fa fa-thumbs-down text-muted"></i> (<%= post.downvote %>)</button>
+			</form>
+		</div>
+	</div>
+	<div class="card-footer">
+		<%- include('./comment', {comments}) %>	
+	</div>
+</div>
+
+<script>
+	fetch("http://127.0.0.1:3005/comments/post/5b404d5fd9401c04ffc1a04e")
+	.then(res => res.json())
+	.then(d => {
+		d.map((c, i) => {
+			console.log(c.date)
+		});
+	});
+</script>

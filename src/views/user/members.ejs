@@ -1,0 +1,22 @@
+<%- include('./../partials/head') -%>
+<%- include('./../partials/nav') -%>
+<br><br><br>
+
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+			members
+		</div>
+		<div class="card-body">
+			<div class="d-flex flex-wrap">
+			<% users.forEach((user) => { %>
+				<div class="p-2 m-1">
+					<img class="rounded-circle" src="/uploads/avatar/<%= user.avatar %>" alt="" style="width: 50px;height: 50px"><br>
+					<a href="/profile/<%= user._id %>"><%= user.name %></a>
+				</div>
+			<% }); %>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include('./../partials/end') -%>

@@ -1,0 +1,56 @@
+<%- include('./../partials/head') -%>
+<%- include('./../partials/nav') -%>
+<br>
+<div class="container">
+<div class="card">
+    <div class="card-body">
+        <form method="POST" action="/categories" enctype="multipart/form-data">
+            <p class="h5 text-center py-4">Create a New Category</p>
+
+            <div class="md-form">
+                <input type="text" name="name" id="name" class="form-control">
+                <label for="name" class="font-weight-light">Category name:</label>
+            </div>
+
+			<div class="md-form form-sm">
+				<textarea type="text" name="description" id="description" class="md-textarea form-control"></textarea>
+				<label for="description">Description</label>
+            </div>
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                   <span class="input-group-text">Cover</span>
+                </div>
+                <div class="custom-file">
+                   <input name="cover" type="file" class="custom-file-input" id="cover">
+                   <label class="custom-file-label" for="cover">Cover</label>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                   <span class="input-group-text">Image</span>
+                </div>
+                <div class="custom-file">
+                   <input name="image" type="file" class="custom-file-input" id="image">
+                   <label class="custom-file-label" for="image">image</label>
+                </div>
+            </div>
+
+            <div class="text-center py-4 mt-3">
+                <button class="btn btn-outline-cyan btn-sm" type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<br>   
+<ul class="list-group">
+	<% categories.forEach((category) => { %>
+		<%- include('./../partials/category', {category}) -%>				   
+	<% }) %>
+</ul>
+
+</div>
+<%- include('./../partials/end') -%>

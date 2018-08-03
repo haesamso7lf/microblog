@@ -1,0 +1,51 @@
+1
+subscribe with unique value does seem to work 
+
+showing unsubscribe button if the user already subscribed
+
+I think it shares the same idea with the voting buttons thing, you know
+maybe the only difference is showing who the number of voters
+
+that todo
+************
+ordering in the index page
+
+google maps api is not working because of there are not 
+any stored values of latitude and longitude 
+in the data base
+******************
+2
+validation
+
+3
+upload
+
+5
+mail
+
+6
+Css & video player
+
+7
+Search
+
+8
+Chat and Shit
+
+9
+testing
+
+10
+caching with Redis
+
+11
+authorization 
+
+*****React
+1. get indexing and showing components to work
+2. authentication 
+3. get updating and destroy components to work
+
+****
+*need to populate users in comment to show user avatar
+ 

@@ -1,0 +1,29 @@
+<%- include('./../partials/head') -%>
+<%- include('./../partials/nav') -%>
+<br><br><br><br>
+<div class="container">
+	<div class="card">
+		<div class="card-body">	
+			<form action="/signin" method="POST">
+				<p class="h4 text-center mb-4">Sign in</p>
+
+				<div class="md-form">
+					<i class="fa fa-user prefix grey-text"></i>
+					<input type="text" id="username" name="username" class="form-control">
+					<label for="username">Your username</label>
+				</div>
+
+				<div class="md-form">
+					<i class="fa fa-lock prefix grey-text"></i>
+					<input type="password" id="password" name="password" class="form-control">
+					<label for="password">Your password</label>
+				</div>
+
+				<div class="text-center mt-4">
+					<button class="btn btn-outline-primary btn-sm" type="submit">Sign In</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<%- include('./../partials/end') -%>

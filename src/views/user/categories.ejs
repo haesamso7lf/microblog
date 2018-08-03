@@ -1,0 +1,12 @@
+<%- include('./../partials/head') -%>
+<%- include('./../partials/nav') -%>
+<br><br>
+<div class="container">
+	<%- include('./../partials/categoryContainer') -%>
+	<br>
+	<% categories.forEach((category) => { %>
+		<%- include('./../partials/category', {category}) -%>
+	<% }) %>
+</div>
+
+<%- include('./../partials/end') -%>

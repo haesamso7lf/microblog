@@ -1,0 +1,24 @@
+<%- include('./../partials/head') -%>
+<%- include('./../partials/nav') -%>
+<br><br><br>
+<div class="container">
+	<div class="card">
+		<div class="card-body">
+			<p class="h4 text-center">Join a chat</p>
+			<form action="/chat">
+				<div class="md-form">
+					<input type="text" name="name" class="form-control">
+					<label>Display name</label>
+				</div>
+				<div class="md-form">
+					<input type="text" name="room" class="form-control">
+					<label>Room name</label>
+				</div>
+				<div class="text-center">
+					<button type="submit" class="btn btn-outline-primary btn-sm">jion</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<%- include('./../partials/end') -%>

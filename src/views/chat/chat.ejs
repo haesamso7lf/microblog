@@ -1,0 +1,31 @@
+<%- include('./../partials/head') -%>
+<%- include('./../partials/nav') -%>
+<br><br>
+	<div class="card">
+		<div class="card-header">
+			<br>
+			chat
+		</div>
+		<div class="card-body" style="max-height: 75vh; height: 75vh; overflow-y: auto;">
+			<ol id="messages">
+				
+			</ol>
+		</div>
+		<div class="card-footer">
+			<form id="message-form">
+				<div class="md-form input-group">
+					<input type="text" name="message" placeholder="message" class="form-control" autofocus autocomplete="off">
+					<div class="input-group-append">
+						<button type="submit" class="btn btn-primary">send</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+    
+<%- include('./../partials/end') -%>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/socket.io.js"></script>
