@@ -44,15 +44,14 @@ app.use(function(req,res,next){
 
 
 // Heroku and Shit 
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
   if (req.headers['x-forwarded-proto'] === 'http') {
     next()
   } else {
     res.redirect('http://' + req.hostname + req.url);
   }
 });
-
-
+*/
 app.set('views', `${__dirname}/views`);
 
 app.use(express.static(path.join(__dirname, '../public')));
