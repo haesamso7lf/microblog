@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/microblog');
+var url process.env.DATABASEURL || 'mongodb://localhost:27017/microblog'
+mongoose.connect(url);
 
 module.exports = {mongoose};
