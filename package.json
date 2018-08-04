@@ -4,9 +4,8 @@
   "description": "rewrite an old Python project",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon src/app.js",
-    "sql": "nodemon mysql/app.js",
-    "learn": "nodemon learning/index.js",
+    "start": "node src/app.js",
+    "learn": "nodemon src/app.js",
     "test": "mocha test/*.test.js",
     "test-watch": "nodemon --exec \"npm test\""
   },
