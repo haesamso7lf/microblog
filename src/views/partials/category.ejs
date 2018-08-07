@@ -6,7 +6,7 @@
 			<%= category.description %><br>
 		</div>
 		<div class="col-6">
-			admin:
+			<%= t('category:admin') %>:
 			<% category.admin.forEach((user) => { %>
 				<%= user.name %><br>
 			<% }) %>
@@ -20,7 +20,7 @@
 				<% if(currentUser) { %>
 					<input type="hidden" name="userID" value= <%= currentUser._id %> />
 				<% } %>
-				<button type="submit" class="btn btn-sm btn-outline-default">Subscribe</button>
+				<button type="submit" class="btn btn-sm btn-outline-default"><%= t('category:subscribe') %></button>
 			</form>
 		</div>
 		<div class="col-1">
@@ -28,9 +28,9 @@
 			  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			  </button>
 			  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-					<a data-toggle="modal" data-target="#edit-<%= category._id %>" class="dropdown-item">Edit</a>
+					<a data-toggle="modal" data-target="#edit-<%= category._id %>" class="dropdown-item"><%= t('category:edit') %></a>
 					<form method="POST" action="/categories/<%= category._id %>?_method=DELETE">
-						<button type="submit" class="dropdown-item">DELETE</button>
+						<button type="submit" class="dropdown-item"><%= t('category:delete') %></button>
 					</form>
 			  </div>
 			</div>			
@@ -45,7 +45,7 @@
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="editLabel">edit</h5>
+						<h5 class="modal-title" id="editLabel"><%= t('category:edit') %></h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -53,37 +53,37 @@
 					<div class="modal-body">
 						<div class="md-form">
 							<input type="text" name="name" id="name-<%= category._id %>" value="<%= category.name %>" class="form-control">
-							<label for="name-<%= category._id %>" class="font-weight-light">Category name:</label>
+							<label for="name-<%= category._id %>" class="font-weight-light"><%= t('category:category_name') %></label>
 						</div>
 
 						<div class="md-form form-sm">
 							<textarea type="text" name="description" id="description-<%= category._id %>" class="md-textarea form-control"><%= category.description %></textarea>
-							<label for="description-<%= category._id %>">Description</label>
+							<label for="description-<%= category._id %>"><%= t('category:description') %></label>
 						</div>
 						
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
-							   <span class="input-group-text">Cover</span>
+							   <span class="input-group-text"><%= t('category:cover') %></span>
 							</div>
 							<div class="custom-file">
 							   <input name="cover" type="file" class="custom-file-input" id="cover-<%= category._id %>">
-							   <label class="custom-file-label" for="cover-<%= category._id %>">Cover</label>
+							   <label class="custom-file-label" for="cover-<%= category._id %>"><%= t('category:cover') %></label>
 							</div>
 						</div>
 			
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
-							   <span class="input-group-text">Image</span>
+							   <span class="input-group-text"><%= t('category:image') %></span>
 							</div>
 							<div class="custom-file">
 							   <input name="image" type="file" class="custom-file-input" id="image-<%= category._id %>">
-							   <label class="custom-file-label" for="image-<%= category._id %>">image</label>
+							   <label class="custom-file-label" for="image-<%= category._id %>"><%= t('category:image') %></label>
 							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button class="btn btn-primary btn-sm" type="submit">Update</button>
-						<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+						<button class="btn btn-primary btn-sm" type="submit"><%= t('category:save') %></button>
+						<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"><%= t('category:close') %></button>
 					</div>
 				</div>
 			</div>

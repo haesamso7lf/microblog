@@ -4,6 +4,8 @@ import Navbar from './components/partials/Navbar';
 import User from './components/partials/User';
 import Category from './components/partials/Category';
 import Post from './components/partials/Post';
+import { translate, Trans } from 'react-i18next';
+import I18n from '../node_modules/react-i18next/dist/commonjs/I18n';
 
 const Home = () => (
 	<h1>Home</h1>
@@ -99,8 +101,8 @@ class Posts extends Component {
 }
 
 class App extends Component {
-
 	render () {
+	const {t, i18n} = this.props;
 	return(
 		<div className="container">
 			<Navbar />
@@ -108,6 +110,7 @@ class App extends Component {
 			<br />
 			<br />
 			<br />
+			{ t('welcome.title', { framework: "Eimoo the real motherfucking G" }) }
 			<Switch>
 				<Route exact path='/' component={Posts} />	
 				<Route path='/user' component={User} />
@@ -117,8 +120,10 @@ class App extends Component {
 				<Route path='/stats' component={Stats} />
 				<Route path='/post/:id' component={PostLink} />
 			</Switch>
+			<button onClick={ () => i18n.changeLanguage('es')}> es </button>
+			<button onClick={ () => i18n.changeLanguage('en')}> en </button>
 		</div>
 		)
 	}
 }
-export default App;
+export default translate('common')(App);

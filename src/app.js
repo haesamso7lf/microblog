@@ -25,6 +25,13 @@ const {User} = require('./models/user');
 const {Post} = require('./models/post');
 const db = mongoose.connection;
 
+/* //i18n
+const i18n = require('i18n-express'); */
+
+const i18next = require('i18next');
+const i18nextMiddleware = require('i18next-express-middleware');
+const Backend = require('i18next-node-fs-backend'); // must change variable name 
+
 //app
 const app = express();
 const port = process.env.PORT || 3005;
@@ -43,15 +50,6 @@ app.use(function(req,res,next){
 });
 
 
-// Heroku and Shit 
-/*app.use(function (req, res, next) {
-  if (req.headers['x-forwarded-proto'] === 'http') {
-    next()
-  } else {
-    res.redirect('http://' + req.hostname + req.url);
-  }
-});
-*/
 app.set('views', `${__dirname}/views`);
 
 app.use(express.static(path.join(__dirname, '../public')));
@@ -102,6 +100,22 @@ app.use(morgan('combined', {
 }));
 
 app.use(cors());
+
+i18next
+  .use(Backend)
+  .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    ns: ['common', 'login', 'register', 'category', 'translation'],
+    backend: {
+      loadPath: __dirname + '/translations/{{lng}}/{{ns}}.json',
+      addPath: __dirname + '/translations/{{lng}}/{{ns}}.missing.json'
+    },
+    fallbackLng: 'en',
+    preload: ['en', 'es'],
+    saveMissing: true
+  });
+
+app.use(i18nextMiddleware.handle(i18next));
 
 // routes
 var indexRoutes = require('./routes/index');
