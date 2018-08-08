@@ -46,15 +46,15 @@
 				  <div id="textCtrl" class="tab-pane">
 					 <div class="md-form">
 						<input type="text" name="title" id="title" class="form-control">
-						<label for="title" class="font-weight-light">Title</label>
+						<label for="title" class="font-weight-light"><%= t('post:title')%></label>
 					 </div>
 					 <div class="md-form">
 						<textarea type="text" name="content" id="content" class="form-control md-textarea"></textarea>
-						<label for="content">Content</label>
+						<label for="content"><%= t('post:content')%></label>
 					 </div>
 					 <div class="input-group mb-3">
 						<div class="input-group-prepend">
-						   <span class="input-group-text">Upload</span>
+						   <span class="input-group-text"><%= t('post:upload')%></span>
 						</div>
 						<div class="custom-file">
 						   <input type="file" name="image" class="custom-file-input" id="image">
@@ -308,7 +308,7 @@
 			<div id="tagCtrl" class="tab-pane">
 			   <div class="md-form">
 				  <input type="text" name="tag" id="tag" class="form-control">
-				  <label for="tag" class="font-weight-light">Tag</label>
+				  <label for="tag" class="font-weight-light"><%= t('post:tag') %></label>
 			   </div>
 			</div>
 			<div id="postInCtrl" class="tab-pane">
@@ -336,7 +336,7 @@
 			<div id="timeCtrl" class="tab-pane">
 			   <div class="input-group mb-2 mr-sm-2">
 				  <div class="input-group-prepend">
-					 <div class="input-group-text">date</div>
+					 <div class="input-group-text"><%= t('post:date')%></div>
 				  </div>
 				  <input class="form-control py-0" name="date" type="datetime-local">
 			   </div>

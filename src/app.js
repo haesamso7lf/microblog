@@ -105,7 +105,7 @@ i18next
   .use(Backend)
   .use(i18nextMiddleware.LanguageDetector)
   .init({
-    ns: ['common', 'login', 'register', 'category', 'translation'],
+    ns: ['common', 'login', 'register', 'profile', 'category', 'post', 'comment', 'chat', 'translation'],
     backend: {
       loadPath: __dirname + '/translations/{{lng}}/{{ns}}.json',
       addPath: __dirname + '/translations/{{lng}}/{{ns}}.missing.json'

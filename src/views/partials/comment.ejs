@@ -28,7 +28,7 @@
 					<form action="/comments" method="POST">
 							<input type="hidden" name="child" value="<%= comment._id %>">
 							<input type="hidden" name="post" value="<%= post._id %>">
-							<input type="text" name="content" class="form-control" placeholder="Write a comment">
+							<input type="text" name="content" class="form-control" placeholder="<%= t('comment:write_comment') %>">
 					</form>
 				</div>
 			</div>
@@ -85,7 +85,7 @@
 	<div class="col-sm-11">
 		<form action="/comments" method="POST">
 				<input type="hidden" name="post" value="<%= post._id %>">
-				<input type="text" name="content" class="form-control" placeholder="Write a comment">
+				<input type="text" name="content" class="form-control" placeholder="<%= t('comment:write_comment') %>">
 		</form>
 	</div>
 </div>
